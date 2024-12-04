@@ -1,0 +1,28 @@
+version = 1
+requires-python = ">=3.9, <4"
+
+[[package]]
+name = "gsignals"
+version = "0.2.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/3d/09/f928b75afda4eebccb6e6dcda3318fe081aacbf2837a648105d94557c4d5/gsignals-0.2.1.tar.gz", hash = "sha256:6077298763cbe02360ae60d9cefc002330a245b59b3fd65b3c3725c812c32553", size = 5782 }
+
+[[package]]
+name = "scribes-helpers"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "gsignals" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e0/27/0edde664f0ef24a9102c9be74a95f19b2236c2863993d18b680700e9e673/scribes.helpers-0.5.1.tar.gz", hash = "sha256:f9d5a2c9d47a62ac5302172333ece4079c674cb78b5fb3c34bd4902a1ac53115", size = 2455 }
+
+[[package]]
+name = "uv2nix-hammer-app"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "scribes-helpers" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "scribes-helpers", specifier = "==0.5.1" }]

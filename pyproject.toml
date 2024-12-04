@@ -1,0 +1,13 @@
+
+[project]
+name = "uv2nix-hammer-app"
+version = "0.1.0"
+description = "Learn to build scribes.helpers"
+requires-python = "~=3.9"
+dependencies = [
+    "scribes.helpers==0.5.1",
+]
+
+[tool.uv]
+    no-binary-package = ['scribes.helpers']
+    

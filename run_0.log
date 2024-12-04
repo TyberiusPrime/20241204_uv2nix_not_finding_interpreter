@@ -1,0 +1,22 @@
+warning: Git tree '/project/builds/hammer_build_scribes-helpers_0.5.1/build' is dirty
+trace: gsignals matched to 0.2.1
+these 3 derivations will be built:
+  /nix/store/i9s9bl601lm84l5qzy9z2n3lqbr2v07l-uv2nix-hammer-app-0.1.0.drv
+  /nix/store/sqhckyb8ycpkgfbx39zywkan5fwxfghg-scribes-helpers-0.5.1.drv
+  /nix/store/1nsyxjjj76002j7hlwmimx2daf243sg5-test-venv.drv
+building '/nix/store/sqhckyb8ycpkgfbx39zywkan5fwxfghg-scribes-helpers-0.5.1.drv'...
+building '/nix/store/i9s9bl601lm84l5qzy9z2n3lqbr2v07l-uv2nix-hammer-app-0.1.0.drv'...
+error: builder for '/nix/store/sqhckyb8ycpkgfbx39zywkan5fwxfghg-scribes-helpers-0.5.1.drv' failed with exit code 2;
+       last 10 log lines:
+       > setting SOURCE_DATE_EPOCH to timestamp 1285295006 of file scribes.helpers-0.5.1/setup.cfg
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > Executing pyprojectConfigurePhase
+       > Finished executing pyprojectConfigurePhase
+       > Running phase: buildPhase
+       > Executing pyprojectBuildPhase
+       > Creating a wheel...
+       > error: No interpreter found for path `/nix/store/6afh4incr2yddr2sfyq99yh033avph24-python3-3.9.20/bin/python3.9` in virtual environments, managed installations, or system path
+       For full logs, run 'nix log /nix/store/sqhckyb8ycpkgfbx39zywkan5fwxfghg-scribes-helpers-0.5.1.drv'.
+error: 1 dependencies of derivation '/nix/store/1nsyxjjj76002j7hlwmimx2daf243sg5-test-venv.drv' failed to build
