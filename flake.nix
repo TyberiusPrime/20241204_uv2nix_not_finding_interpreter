@@ -40,27 +40,40 @@
       overlay = workspace.mkPyprojectOverlay {
         sourcePreference = "wheel";
       };
-      pyprojectOverrides = uv2nix_hammer_overrides.overrides_strict pkgs;
-      #pyprojectOverrides = final: prev: {};
+      pyprojectOverrides = lib.composeManyExtensions [
+        (uv2nix_hammer_overrides.overrides_strict pkgs)
+        (
+          final: prev: {
+            gsignals = prev.gsignals.overrideAttrs (old: {
+              nativeBuildInputs = old.nativeBuildInputs ++ (final.resolveBuildSystem {setuptools = [];});
+            });
+              # we're going to need this...
+            scribes-helpers = prev.scribes-helpers.overrideAttrs (old: {
+              nativeBuildInputs = old.nativeBuildInputs ++ (final.resolveBuildSystem {setuptools = [];});
+            });
+          }
+        )
+      ];
       python = pkgs.python39;
       spec = {
         uv2nix-hammer-app = [];
       };
 
       # Construct package set
-     pythonSet =
+      pythonSet =
         # Use base package set from pyproject.nix builders
         (pkgs.callPackage pyproject-nix.build.packages {
           inherit python;
-        }).overrideScope
-          (
-            lib.composeManyExtensions [
-              pyproject-build-systems.overlays.default
-              overlay
-              pyprojectOverrides
-            ]
-          );
-        # Override host packages with build fixups
+        })
+        .overrideScope
+        (
+          lib.composeManyExtensions [
+            pyproject-build-systems.overlays.default
+            overlay
+            pyprojectOverrides
+          ]
+        );
+      # Override host packages with build fixups
     in
       # Render venv
       pythonSet.mkVirtualEnv "test-venv" spec;

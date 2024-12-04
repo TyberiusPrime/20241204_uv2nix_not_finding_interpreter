@@ -151,17 +151,17 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1733300254,
-        "narHash": "sha256-pknpw5/IuB4+NeqGdIbXY2BnViXkCjwmBZ7LMqK23WM=",
-        "ref": "refs/heads/scribes.helpers-0.5.1",
-        "rev": "f05e2e110c2248743ab0a79e6928b36689ae7f22",
-        "revCount": 5971,
-        "type": "git",
-        "url": "file:///project/builds/hammer_build_scribes-helpers_0.5.1/overrides"
+        "lastModified": 1732704330,
+        "narHash": "sha256-hSUl9nY0kXzskbIEl79CW+6CUZXNM2h+f+eaHc+OGVQ=",
+        "owner": "tyberiusprime",
+        "repo": "uv2nix_hammer_overrides",
+        "rev": "50140402db9cc0cccee03c13124abf9e418c7124",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///project/builds/hammer_build_scribes-helpers_0.5.1/overrides"
+        "owner": "tyberiusprime",
+        "repo": "uv2nix_hammer_overrides",
+        "type": "github"
       }
     }
   },
